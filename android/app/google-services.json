@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "213171123925",
+    "firebase_url": "https://bank-code-d1058-default-rtdb.firebaseio.com",
+    "project_id": "bank-code-d1058",
+    "storage_bucket": "bank-code-d1058.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213171123925:android:a7b5ff464cec336f29145c",
+        "android_client_info": {
+          "package_name": "com.example.appcompass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "213171123925-dl9khmmtslou668nmarpddon549keojo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFY85mPXGJYoBa-HDUuMWLZGdjLY_csws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "213171123925-dl9khmmtslou668nmarpddon549keojo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "213171123925-tb7o0o5p3phicem3j0jk5v16j1atvg7a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.exemplo.bankcode"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
