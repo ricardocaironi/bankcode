@@ -62,7 +62,7 @@ class _SignUpPageState extends State<SignUpPage> {
               children: [
                 TextLogo(),
                 ImageLogo(),
-                Padding(padding: EdgeInsets.all(12)),
+                Padding(padding: EdgeInsets.all(10)),
                 Column(
                   children: [
                     Form(
@@ -157,18 +157,28 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                   ),
                 ),
-                Padding(padding: EdgeInsets.all(14)),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => LoginPage(),
-                      ),
-                    );
-                  },
-                  child: Text('Login',
-                      style: TextStyle(color: Colors.black, fontSize: 20),
-                      textAlign: TextAlign.center),
+                Padding(padding: EdgeInsets.all(20)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Back to  ',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => LoginPage(),
+                          ),
+                        );
+                      },
+                      child: Text('Login',
+                          style: TextStyle(color: Colors.black, fontSize: 20),
+                          textAlign: TextAlign.center),
+                    ),
+                    
+                  ],
                 ),
               ],
             ),

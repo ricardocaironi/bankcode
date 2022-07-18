@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
               TextLogo(),
               ImageLogo(),
               Padding(
-                padding: EdgeInsets.all(20),
+                padding: EdgeInsets.all(18),
               ),
               Column(
                 children: [
@@ -119,7 +119,11 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Padding(padding: EdgeInsets.all(6)),
               GestureDetector(
-                onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => ForgotPasswordPage(),),),
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => ForgotPasswordPage(),
+                  ),
+                ),
                 child: Text('Forgot password?',
                     style: TextStyle(color: Colors.white, fontSize: 14),
                     textAlign: TextAlign.right),
@@ -143,19 +147,28 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(16),
+                padding: EdgeInsets.all(34),
               ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => SignUpPage(),
-                    ),
-                  );
-                },
-                child: Text('Sign Up',
-                    style: TextStyle(color: Colors.black, fontSize: 20),
-                    textAlign: TextAlign.center),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Create account?  ",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => SignUpPage(),
+                        ),
+                      );
+                    },
+                    child: Text('Sign Up',
+                        style: TextStyle(color: Colors.black, fontSize: 20),
+                        textAlign: TextAlign.center),
+                  ),
+                ],
               ),
             ],
           ),
