@@ -21,7 +21,7 @@ class ImageLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Padding(
-      padding: EdgeInsets.all(15),
+      padding: EdgeInsets.all(10),
       child: Image.asset(
         'assets/img/bankcode.png',
         height: 180,

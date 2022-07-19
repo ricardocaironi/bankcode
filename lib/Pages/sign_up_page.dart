@@ -17,6 +17,8 @@ class _SignUpPageState extends State<SignUpPage> {
   final _passwordController = TextEditingController();
   final _confirmController = TextEditingController();
 
+  bool showPassword = false;
+
   bool _isLoading = false;
 
   @override
@@ -62,7 +64,7 @@ class _SignUpPageState extends State<SignUpPage> {
               children: [
                 TextLogo(),
                 ImageLogo(),
-                Padding(padding: EdgeInsets.all(10)),
+                Padding(padding: EdgeInsets.all(4)),
                 Column(
                   children: [
                     Form(
@@ -107,7 +109,8 @@ class _SignUpPageState extends State<SignUpPage> {
                           TextFormField(
                             controller: _passwordController,
                             style: TextStyle(color: Colors.white),
-                            obscureText: true,
+                            obscureText:
+                                (this.showPassword == true) ? false : true,
                             decoration: InputDecoration(
                               labelText: "Password",
                               labelStyle: TextStyle(color: Colors.white70),
@@ -121,29 +124,50 @@ class _SignUpPageState extends State<SignUpPage> {
                               ),
                             ),
                           ),
-                          TextFormField(
-                            controller: _confirmController,
-                            style: TextStyle(color: Colors.white),
-                            obscureText: true,
-                            decoration: InputDecoration(
-                              labelText: "Confirm password",
-                              labelStyle: TextStyle(color: Colors.white70),
-                              // ignore: prefer_const_constructors
-                              prefixIcon: Icon(
-                                Icons.key,
-                                color: Colors.white70,
-                              ),
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.white70),
-                              ),
-                            ),
-                          ),
+                          (this.showPassword == false)
+                              ? TextFormField(
+                                  controller: _confirmController,
+                                  style: TextStyle(color: Colors.white),
+                                  obscureText: true,
+                                  decoration: InputDecoration(
+                                    labelText: "Confirm password",
+                                    labelStyle:
+                                        TextStyle(color: Colors.white70),
+                                    // ignore: prefer_const_constructors
+                                    prefixIcon: Icon(
+                                      Icons.key,
+                                      color: Colors.white70,
+                                    ),
+                                    enabledBorder: UnderlineInputBorder(
+                                      borderSide:
+                                          BorderSide(color: Colors.white70),
+                                    ),
+                                  ),
+                                )
+                              : Container(),
                         ],
                       ),
                     ),
                   ],
                 ),
-                Padding(padding: EdgeInsets.all(16)),
+                Row(
+                  children: [
+                    Checkbox(
+                      value: this.showPassword,
+                      onChanged: (newValue) {
+                        setState(() {
+                          this.showPassword = newValue!;
+                        });
+                      },
+                      activeColor: Colors.greenAccent,
+                    ),
+                    Text(
+                      'Show password?',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
+                Padding(padding: EdgeInsets.all(14)),
                 ElevatedButton(
                   style: ButtonStyle(
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
@@ -177,7 +201,6 @@ class _SignUpPageState extends State<SignUpPage> {
                           style: TextStyle(color: Colors.black, fontSize: 20),
                           textAlign: TextAlign.center),
                     ),
-                    
                   ],
                 ),
               ],
